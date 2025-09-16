@@ -1,0 +1,15 @@
+{
+  "name": "exemplos-aula-backend-jovemprogramador-2025",
+  "version": "1.0.0",
+  "description": "Projeto de exemplo JP",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mateus Lipinski",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
