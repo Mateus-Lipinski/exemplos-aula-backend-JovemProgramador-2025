@@ -28,6 +28,28 @@ app.get('/api/pessoa/:id', (req, res) => {
     console.log(req.params)
 })
 
+
+// Tentativa de fazer os exercicios (1 até 5)
+// Exercicio 1 --Forma 1
+app.get('/exercicio1/:num1/:num2', (req, res) => {
+    const num1 = parseFloat(req.params.num1)
+    const num2 = parseFloat(req.params.num2)
+
+    const somaDaMaldade = num1 + num2
+
+    res.send(`Resultado dessa soma: ${num1} + ${num2} = ${somaDaMaldade}`)
+})
+//Exercicio 1 --Forma 2
+app.get('/exercicio1/', (req, res) => {
+    const num1 = parseFloat(req.query.num1)
+    const num2 = parseFloat(req.query.num2)
+
+    const somaDaMaldade = num1 + num2
+
+    res.send(`Resultado desse cálculo: ${num1} + ${num2} = ${somaDaMaldade}`)
+})
+
+// Inicialização do servidor em determinada porta do seu computador
 app.listen(3000, () => {
     console.log("Servidor rodando na porta 3000")
 })
