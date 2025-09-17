@@ -3,8 +3,21 @@ Exemplos de backend das aulas do Jovem Programador (SENAC) 2025
 
 Como iniciar o projeto
 
-npm init
+> npm init
 
 Como executar o arquivo
 
-node 'nome do arquivo'
+> node .\ 'nome do arquivo'
+
+Baixar o express
+
+> npm i express
+
+Se for usar import novo
+
+> import express from "express"
+
+E no package.json
+
+>"dependencies": {  
+>"express": "^5.1.0"
