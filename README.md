@@ -21,3 +21,9 @@ E no package.json
 
 >"dependencies": {  
 >"express": "^5.1.0"
+
+No 'package.json' é possivel criar scripts para o 'npm run', exemplo: (npm run dev)
+
+> "scripts": {  
+>    "dev": "node index.js",  
+>  }
