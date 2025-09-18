@@ -12,6 +12,7 @@
 // console.log('Hello World! :v')
 
 import express from "express"
+import { exercicio1_1, exercicio1_2, exercicio2_1, exercicio2_2, exercicio3_1, exercicio3_2, exercicio4_1, exercicio4_2, exercicio5_1, exercicio5_2 } from "./services/exercicios.js";
 
 // Inicializando a API com o 'express'
 const app = express();
@@ -31,105 +32,34 @@ app.get('/api/pessoa/:id', (req, res) => {
 
 // Tentativa de fazer os exercicios (1 até 5)
 // Exercicio 1 --Forma 1 (params)
-app.get('/exercicio1/:num1/:num2', (req, res) => {
-    const num1 = parseFloat(req.params.num1)
-    const num2 = parseFloat(req.params.num2)
+app.get('/exercicio1/:num1/:num2', exercicio1_1)
 
-    const somaDaMaldade = num1 + num2
-
-    res.send(`Resultado dessa soma: ${num1} + ${num2} = ${somaDaMaldade}`)
-})
 //Exercicio 1 --Forma 2 (query)
-app.get('/exercicio1/', (req, res) => {
-    const num1 = parseFloat(req.query.num1)
-    const num2 = parseFloat(req.query.num2)
-
-    const somaDaMaldade = num1 + num2
-
-    res.send(`Resultado desse cálculo: ${num1} + ${num2} = ${somaDaMaldade}`)
-})
+app.get('/exercicio1/', exercicio1_2)
 
 //Exercicio 2 --Forma 1 (params)
-app.get('/exercicio2/:valorHora/:horasTrabalhadas', (req, res) => {
-    const valorHora = parseInt(req.params.valorHora)
-    const horasTrabalhadas = parseInt(req.params.horasTrabalhadas)
-
-    const valorTotal = valorHora * horasTrabalhadas
-
-    res.send(`Você irá receber no final do mês: R$${valorTotal} (Valor Hora: ${valorHora} / Horas Trabalhadas: ${horasTrabalhadas})`)
-})
+app.get('/exercicio2/:valorHora/:horasTrabalhadas', exercicio2_1)
 
 //Exercicio 2 --Forma 2 (query)
-app.get('/exercicio2/', (req, res) => {
-    const valorHora = parseInt(req.query.valorHora)
-    const horasTrabalhadas =parseInt(req.query.horasTrabalhadas)
-
-    const salario = valorHora * horasTrabalhadas
-
-    res.send(`Você irá receber no final do mês: R$${salario} (Valor Hora: R$${valorHora} / Horas Trabalhadas: ${horasTrabalhadas} horas)`)
-})
+app.get('/exercicio2/', exercicio2_2)
 
 //Exercicio 3 --Forma 1 (params)
-app.get('/exercicio3/:peso1/:peso2/:peso3/:peso4/:peso5', (req, res) => {
-    const peso1 = parseFloat(req.params.peso1)
-    const peso2 = parseFloat(req.params.peso2)
-    const peso3 = parseFloat(req.params.peso3)
-    const peso4 = parseFloat(req.params.peso4)
-    const peso5 = parseFloat(req.params.peso5)
-
-    const mediaTotal = (peso1 + peso2 + peso3 + peso4 + peso5) / 5
-
-    res.send(`Média dos pesos ficou: ${mediaTotal} (Peso Nº1: ${peso1}; Peso Nº2: ${peso2}; Peso Nº3: ${peso3}; Peso Nº4: ${peso4}; Peso Nº5: ${peso5})`)
-})
+app.get('/exercicio3/:peso1/:peso2/:peso3/:peso4/:peso5', exercicio3_1)
 
 //Exercicio 3 --Forma 2 (query)
-app.get('/exercicio3/', (req, res) => {
-    const peso1 = parseFloat(req.query.peso1)
-    const peso2 = parseFloat(req.query.peso2)
-    const peso3 = parseFloat(req.query.peso3)
-    const peso4 = parseFloat(req.query.peso4)
-    const peso5 = parseFloat(req.query.peso5)
-
-    const mediaTotal = (peso1 + peso2 + peso3 + peso4 + peso5) / 5
-
-    res.send(`Média dos pesos ficou: ${mediaTotal} (Peso Nº1: ${peso1}; Peso Nº2: ${peso2}; Peso Nº3: ${peso3}; Peso Nº4: ${peso4}; Peso Nº5: ${peso5})`)
-})
+app.get('/exercicio3/', exercicio3_2)
 
 //Exercicio 4 --Forma 1 (params)
-app.get('/exercicio4/:celsius', (req, res) => {
-    const celsius = parseFloat(req.params.celsius)
-
-    const convercao = (9 * celsius + 160) / 5
-
-    res.send(`O resultado da converção ficou em: ${convercao}ºF`)
-})
+app.get('/exercicio4/:celsius', exercicio4_1)
 
 //Exercicio 4 --Forma 2 (query)
-app.get('/exercicio4/', (req, res) => {
-    const celsius = parseFloat(req.query.celsius)
-
-    const convercao = (9 * celsius + 160) / 5
-
-    res.send(`O resultado da converção ficou em: ${convercao}ºF`)
-})
+app.get('/exercicio4/', exercicio4_2)
 
 //Exercicio 5 --Forma 1 (params)
-app.get('/exercicio5/:milhas', (req, res) => {
-    const milhas = parseFloat(req.params.milhas)
-
-    const km = milhas * 1.60934
-
-    res.send(`O resultado da converção de Milhas para Quilômetros ficou em: ${km}km`)
-})
+app.get('/exercicio5/:milhas', exercicio5_1)
 
 //Exercicio 5 --Forma 2 (query)
-app.get('/exercicio5/', (req, res) => {
-    const milhas = parseFloat(req.query.milhas)
-
-    const km = milhas * 1.60934
-
-    res.send(`O resultado da converção de Milhas para Quilômetros ficou em: ${km}km`)
-})
+app.get('/exercicio5/', exercicio5_2)
 
 // Inicialização do servidor em determinada porta do seu computador
 app.listen(3000, () => {
