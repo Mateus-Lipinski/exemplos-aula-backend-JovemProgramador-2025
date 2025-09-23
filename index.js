@@ -2,8 +2,8 @@
 // 'let' é mutavél 
 
 // const numero =10;
-// let outronumero = 20;
 
+// let outronumero = 20;
 // if (1 == 1) {
 //     outronumero = 29;
 //     console.log(outronumero);
@@ -12,7 +12,8 @@
 // console.log('Hello World! :v')
 
 import express from "express"
-import { exercicio1_1, exercicio1_2, exercicio2_1, exercicio2_2, exercicio3_1, exercicio3_2, exercicio4_1, exercicio4_2, exercicio5_1, exercicio5_2, exercicioPost } from "./services/exercicios.js";
+import { exercicio1_1, exercicio1_2, exercicio2_1, exercicio2_2, exercicio3_1, exercicio3_2, exercicio4_1, exercicio4_2, exercicio5_1, exercicio5_2} from "./controllers/exerciciosGet.js";
+import { exemploPost } from "./services/exerciciosPost.js";
 
 // Inicializando a API com o 'express'
 const app = express();
@@ -32,30 +33,22 @@ app.get('/api/pessoa/:id', (req, res) => {
 })
 
 // Tentativa de fazer os exercicios (1 até 5) (Com método Get) ----------
-// Exercicio 1 --Forma 1 (params) ---------------------------------------
+// Exercicios 1 até 5 (params) --Forma 1 --------------------------------
 app.get('/exercicio1/:num1/:num2', exercicio1_1)
-//Exercicio 2 --Forma 1 (params) ----------------------------------------
 app.get('/exercicio2/:valorHora/:horasTrabalhadas', exercicio2_1)
-//Exercicio 3 --Forma 1 (params) ----------------------------------------
 app.get('/exercicio3/:peso1/:peso2/:peso3/:peso4/:peso5', exercicio3_1)
-//Exercicio 4 --Forma 1 (params) ----------------------------------------
 app.get('/exercicio4/:celsius', exercicio4_1)
-//Exercicio 5 --Forma 1 (params) ----------------------------------------
 app.get('/exercicio5/:milhas', exercicio5_1)
 //-----------------------------------------------------------------------
-//Exercicio 1 --Forma 2 (query) -----------------------------------------
+// Exercicios 1 até 5 (query) --Forma 2 ---------------------------------
 app.get('/exercicio1/', exercicio1_2)
-//Exercicio 2 --Forma 2 (query) -----------------------------------------
 app.get('/exercicio2/', exercicio2_2)
-//Exercicio 3 --Forma 2 (query) -----------------------------------------
 app.get('/exercicio3/', exercicio3_2)
-//Exercicio 4 --Forma 2 (query) -----------------------------------------
 app.get('/exercicio4/', exercicio4_2)
-//Exercicio 5 --Forma 2 (query) -----------------------------------------
 app.get('/exercicio5/', exercicio5_2)
 
 //Exemplo de Post
-app.post('/exercicio1', exercicioPost)
+app.post('/exemploPost/', exemploPost)
 
 // Exercicios Post
 

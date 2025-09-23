@@ -24,6 +24,8 @@ E no package.json
 
 No 'package.json' é possivel criar scripts para o 'npm run', exemplo: (npm run dev)
 
+"--watch" = Cada mudança no código restarta o 'server'
+
 > "scripts": {  
->    "dev": "node index.js",  
+>    "dev": "node --watch index.js",  
 >  }
