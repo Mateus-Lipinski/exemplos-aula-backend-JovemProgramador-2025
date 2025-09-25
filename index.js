@@ -13,7 +13,7 @@
 
 import express from "express"
 import { exercicio1_1, exercicio1_2, exercicio2_1, exercicio2_2, exercicio3_1, exercicio3_2, exercicio4_1, exercicio4_2, exercicio5_1, exercicio5_2} from "./controllers/exerciciosGet.js";
-import { exemploPost } from "./services/exerciciosPost.js";
+import { exemploPost, exercicio2, exercicio3, exercicio4, exercicio5 } from "./controllers/exerciciosPost.js";
 
 // Inicializando a API com o 'express'
 const app = express();
@@ -50,8 +50,11 @@ app.get('/exercicio5/', exercicio5_2)
 //Exemplo de Post
 app.post('/exemploPost/', exemploPost)
 
-// Exercicios Post
-
+// Exercicios Post (2 até 5) (Com método Get) ----------
+app.post('/exercicio2Post/', exercicio2)
+app.post('/exercicio3Post/', exercicio3)
+app.post('/exercicio4Post/', exercicio4)
+app.post('/exercicio5Post/', exercicio5)
 
 // Inicialização do servidor em determinada porta do seu computador
 app.listen(3000, () => {
