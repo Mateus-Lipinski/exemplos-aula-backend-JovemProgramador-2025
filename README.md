@@ -29,3 +29,16 @@ No 'package.json' é possivel criar scripts para o 'npm run', exemplo: (npm run 
 > "scripts": {  
 >    "dev": "node --watch index.js",  
 >  }
+
+# Debug
+
+Abra esse icone:
+![](img/debug_img.png)
+
+![](img/image.png)
+
+![](img/image-1.png)
+
+### Se quiser ignorar no GitHub
+> .gitignore  
+> Adicionar a linha ".vscode"
