@@ -12,7 +12,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\index.js" // "\\index.js" esse é o arquivo inicializador, mude o nome caso o arquivo inicial seja outro 
+            "program": "${workspaceFolder}\\/src/index.js" // "\\index.js" esse é o arquivo inicializador, mude o nome caso o arquivo inicial seja outro 
         }
     ]
 }
